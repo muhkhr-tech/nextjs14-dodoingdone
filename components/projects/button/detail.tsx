@@ -34,7 +34,7 @@ export default function ProjectDetailButton({ projectId }: any) {
   return (
     <div>
 
-      <button className="btn btn-sm text-white btn-info" onClick={handleChange}>
+      <button className="btn btn-xs sm:btn-sm text-white btn-info" onClick={handleChange}>
         Detail
       </button>
 
@@ -46,7 +46,7 @@ export default function ProjectDetailButton({ projectId }: any) {
       />
 
       <div className="modal">
-        <div className="modal-box w-1/2 max-w-full">
+        <div className="modal-box sm:w-1/2 max-w-full">
           <div className="flex justify-between items-center w-full mb-3">
             <h3 className="font-bold text-lg">Todo List</h3>
             <button onClick={handleChange}><HiOutlineX size={25} /></button>
