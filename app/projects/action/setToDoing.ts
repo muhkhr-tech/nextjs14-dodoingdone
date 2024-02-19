@@ -14,10 +14,16 @@ export default async function SetToDoing(todoId: any, projectId: any) {
 
     const project = await db.select().from(projects).where(eq(projects.id, projectId))
 
-    await db.update(projects).set({
-      totalTodos: project[0].totalTodos - 1,
-      totalTodosInprogress: project[0].totalTodosInprogress + 1,
-    }).where(eq(projects.id, projectId))
+    if (todo[0].status === 'done') {
+      await db.update(projects).set({
+        totalTodosInprogress: project[0].totalTodosInprogress + 1,
+        totalTodosCompleted: project[0].totalTodosCompleted - 1,
+      }).where(eq(projects.id, projectId))
+    } else {
+      await db.update(projects).set({
+        totalTodosInprogress: project[0].totalTodosInprogress + 1
+      }).where(eq(projects.id, projectId))
+    }
 
     return data[0].status
   }

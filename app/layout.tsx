@@ -10,10 +10,9 @@ const roboto = Roboto({
   display: 'swap',
 })
 
-
 export const metadata: Metadata = {
-  title: "TaskMaster APP",
-  description: "task master app",
+  title: "Do-Doing-Done",
+  description: "do doing done",
 };
 
 export default function RootLayout({
@@ -22,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang="en" className={roboto.className}>
+      <body>
         <div className="">
           <NavbarBottomSection />
           <NavbarTopSection/>
