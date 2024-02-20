@@ -34,7 +34,7 @@ export default function ProjectDetailButton({ projectId }: any) {
   return (
     <div>
 
-      <button className="btn btn-xs sm:btn-sm text-white btn-info" onClick={handleChange}>
+      <button className="btn btn-xs font-thin sm:btn-sm text-white btn-info" onClick={handleChange}>
         Detail
       </button>
 

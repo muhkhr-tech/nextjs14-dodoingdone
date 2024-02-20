@@ -55,7 +55,7 @@ export default function AddTodosProjectButton(projectId: any) {
   return (
     <div>
 
-      <button className="btn btn-xs sm:btn-sm text-white btn-primary" onClick={handleChange}>
+      <button className="btn btn-xs sm:btn-sm font-thin text-white btn-primary" onClick={handleChange}>
         Add
       </button>
 
