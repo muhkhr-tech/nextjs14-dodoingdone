@@ -24,7 +24,7 @@ export default function Card({ data }: any) {
       {data.map((item: any, index: any) => (
         <div key={index} className="relative border p-4 rounded-md shadow-md">
           <div className="flex justify-between">
-            <h4 className="text-md font-bold sm:font-normal sm:text-lg">{item.title}</h4>
+            <h4 className="text-md font-bold sm:font-normal sm:text-lg"><span className={`${item.status == 'do' && 'text-purple-700'} ${item.status == 'doing' && 'text-yellow-500'} ${item.status == 'done' && 'text-green-700'} uppercase text-xs sm:text-sm`}>[{item.status}]</span> {item.title}</h4>
             <SetStatusButton projectId={item.id} status={item.status} />
           </div>
           <div className="mb-2 flex gap-1 text-xs">
@@ -32,13 +32,10 @@ export default function Card({ data }: any) {
             <p>Completion {getCompletion(parseInt(item.totalTodos), parseInt(item.totalTodosInprogress), parseInt(item.totalTodosCompleted))}%</p>
           </div>
           <div className="hidden sm:block text-slate-500 mb-5">{item.description.slice(0, 100)}...</div>
-          <div className="flex justify-between items-center">
-            <div className="text-xs uppercase">Status : <div className={`${item.status == 'do' && 'bg-purple-700 text-white'} ${item.status == 'doing' && 'bg-yellow-500 text-white'} ${item.status == 'done' && 'bg-green-700 text-white'} badge text-xs`}>{item.status}</div></div>
             <div className="flex justify-end gap-2">
               <AddTodosProjectButton projectId={item.id} />
               <ProjectDetailButton project={item} />
             </div>
-          </div>
         </div>
       ))}
     </div>
