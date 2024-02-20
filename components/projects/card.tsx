@@ -1,4 +1,3 @@
-import { HiEllipsisVertical } from "react-icons/hi2";
 import AddTodosProjectButton from "./button/addTodos";
 import ProjectDetailButton from "./button/detail";
 import SetStatusButton from "./button/setStatus";

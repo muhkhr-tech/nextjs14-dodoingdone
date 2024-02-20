@@ -42,7 +42,7 @@ export default function SetStatusButton({ status, projectId }: any) {
         <div className="modal">
           <div className="modal-box w-1/5 max-w-full">
             <div className="flex justify-between">
-              <h3 className="font-bold text-xs pb-2">Change project's status?</h3>
+              <h3 className="font-bold text-xs pb-2">Change status project?</h3>
               <button onClick={handleChange}><HiOutlineX size={20} /></button>
             </div>
 
