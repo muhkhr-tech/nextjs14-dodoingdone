@@ -7,10 +7,10 @@ export const dynamic = 'force-dynamic'
 export default async function ProjectsPage() {
 
   return (
-    <div>
-      <div className="flex justify-between mb-4">
+    <div className="p-4">
+      <div className="flex justify-between mb-4 sm:mb-4">
         <h1>PROJECTS</h1>
-        <div className="flex items-center">
+        <div className="hidden sm:flex">
           <FilterStatusSelect />
         </div>
         <AddProjectButton />

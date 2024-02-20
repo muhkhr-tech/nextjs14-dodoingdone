@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import NavbarBottomSection from "@/components/navbarBottom";
 import NavbarTopSection from "@/components/navbarTop";
+import { Suspense } from "react";
 
 const roboto = Roboto({
   weight: '400',
@@ -24,8 +25,10 @@ export default function RootLayout({
     <html lang="en" className={roboto.className}>
       <body>
         <div className="">
-          <NavbarBottomSection />
-          <NavbarTopSection/>
+          <Suspense>
+            <NavbarBottomSection />
+          </Suspense>
+          <NavbarTopSection />
           <div className="sm:w-4/5 max-w-full mx-auto justify-center">{children}</div>
         </div>
       </body>

@@ -3,8 +3,6 @@
 import GetProjects from "@/app/projects/action/getProjects"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
-import AddTodosProjectButton from "./button/addTodos"
-import ProjectDetailButton from "./button/detail"
 import LoadingSkeleton from "./loadingSkeleton"
 import Card from "./card"
 
@@ -13,7 +11,7 @@ export default function DisplayProjects() {
   const status = searchParams.get('status')
 
   const [data, setData] = useState([])
-  const [isLoading, setLoading] = useState(false)
+  const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
