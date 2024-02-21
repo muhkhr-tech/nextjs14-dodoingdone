@@ -8,6 +8,7 @@ export default async function AddProject(inputData: any) {
     'title': inputData.title,
     'status': 'do',
     'description': inputData.description,
-    'dueDate': inputData.dueDate
+    'dueDate': inputData.dueDate,
+    'userId': 1
   })
 }

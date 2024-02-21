@@ -1,3 +1,4 @@
+import AuthButton from "@/components/auth/button/authButton";
 import Card from "@/components/home/card";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Card status={'do'} />
       <Card status={'doing'} />
       <Card status={'done'} />
+      <AuthButton />
     </div>
     </div>
   );

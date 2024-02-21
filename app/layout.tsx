@@ -4,6 +4,7 @@ import "./globals.css";
 import NavbarBottomSection from "@/components/navbarBottom";
 import NavbarTopSection from "@/components/navbarTop";
 import { Suspense } from "react";
+import NextAuthProvider from "@/components/nextAuthProvider";
 
 const roboto = Roboto({
   weight: '400',
@@ -24,13 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.className}>
       <body>
-        <div className="">
-          <Suspense>
-            <NavbarBottomSection />
-          </Suspense>
-          <NavbarTopSection />
-          <div className="sm:w-4/5 max-w-full mx-auto justify-center">{children}</div>
-        </div>
+        <NextAuthProvider>
+          <div className="">
+            <Suspense>
+              <NavbarBottomSection />
+            </Suspense>
+            <NavbarTopSection />
+            <div className="sm:w-4/5 max-w-full mx-auto justify-center">{children}</div>
+          </div>
+        </NextAuthProvider>
       </body>
     </html>
   );
