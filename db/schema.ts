@@ -11,16 +11,16 @@ import {
   varchar,
 } from 'drizzle-orm/pg-core';
 
-export const users = pgTable('users', {
+export const users = pgTable('user', {
   id: serial('id').primaryKey(),
   name: text('title').notNull(),
   email: text('email').notNull().unique(),
   password: text('password').notNull()
 })
 
-export const usersRelations = relations(users, ({ many }) => ({
-  projects: many(projects),
-}));
+// export const usersRelations = relations(users, ({ many }) => ({
+//   projects: many(projects),
+// }));
 
 export const projects = pgTable('projects', {
   id: serial('id').primaryKey(),

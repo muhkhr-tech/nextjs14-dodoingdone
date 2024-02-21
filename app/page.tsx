@@ -19,7 +19,6 @@ export default function Home() {
       <Card status={'do'} />
       <Card status={'doing'} />
       <Card status={'done'} />
-      <AuthButton />
     </div>
     </div>
   );

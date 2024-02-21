@@ -5,26 +5,23 @@ import Image from "next/image";
 
 export default function AuthButton() {
   const { data: session } = useSession();
-
-  if (session) {
-    return (
-      <>
-        {session?.user?.name} <br />
-        {/* <Image
-            src={session?.user?.image}
-            width={100}
-            height={100}
-            alt="Picture of the author"
-            /> */}
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    )
-  }
-
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      <div className="dropdown dropdown-bottom max-h-full">
+        <div tabIndex={0} role="button" className="flex items-center gap-1">
+          <Image
+            src={session?.user?.image?? ""}
+            width={50}
+            height={40}
+            className="rounded-full"
+            alt="Picture of the author"
+          />
+        </div>
+        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 text-slate-700 rounded-md w-52">
+          <li className="text-sm">{session?.user?.name}</li>
+          <li><button onClick={() => signOut()}>Sign out</button></li>
+        </ul>
+      </div>
     </>
   )
 }
