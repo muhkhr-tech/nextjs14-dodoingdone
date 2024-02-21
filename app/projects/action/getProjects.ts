@@ -11,9 +11,9 @@ export default async function GetProjects(status: any, limit: any) {
     data = await db.select().from(projects).orderBy(desc(projects.createdAt))
   } else {
     if (limit) {
-      data = await db.select().from(projects).where(eq(projects.status, status)).limit(limit).orderBy(desc(projects.createdAt))
+      data = await db.select().from(projects).limit(limit).orderBy(desc(projects.createdAt))
     } else {
-      data = await db.select().from(projects).where(eq(projects.status, status)).orderBy(desc(projects.createdAt))
+      data = await db.select().from(projects).orderBy(desc(projects.createdAt))
     }
   }
   

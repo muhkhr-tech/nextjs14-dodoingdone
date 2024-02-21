@@ -10,9 +10,9 @@ export default async function ProjectsPage() {
     <div className="p-4">
       <div className="flex justify-between mb-4 sm:mb-4">
         <h1>PROJECTS</h1>
-        <div className="hidden sm:flex">
+        {/* <div className="hidden sm:flex">
           <FilterStatusSelect />
-        </div>
+        </div> */}
         <AddProjectButton />
       </div>
       <DisplayProjects />

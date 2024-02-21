@@ -1,7 +1,7 @@
 'use client'
 
 import AddProject from "@/app/projects/action/add"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react"
 
 export default function AddProjectButton() {
@@ -12,7 +12,6 @@ export default function AddProjectButton() {
     description: '',
     dueDate: ''
   })
-  const router = useRouter()
 
   const handleChange = (e: any) => {
     setModal(!modal)
@@ -46,8 +45,6 @@ export default function AddProjectButton() {
         description: '',
         dueDate: ''
       })
-
-      router.refresh()
 
     } catch (err) {
       console.log(err)

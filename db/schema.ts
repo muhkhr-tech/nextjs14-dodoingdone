@@ -14,7 +14,6 @@ import {
 export const projects = pgTable('projects', {
   id: serial('id').primaryKey(),
   title: varchar('title').notNull().unique(),
-  status: text('status'),
   description: text('description'),
   totalTodos: integer('total_todos').notNull().default(0),
   totalTodosInprogress: integer('total_todos_inprogress').notNull().default(0),
@@ -23,7 +22,7 @@ export const projects = pgTable('projects', {
   createdAt: timestamp('created_at').defaultNow()
 })
 
-export const projectssRelations = relations(projects, ({ many }) => ({
+export const projectsRelations = relations(projects, ({ many }) => ({
   todos: many(todos),
 }));
 
@@ -31,11 +30,11 @@ export const todos = pgTable('todos', {
   id: serial('id').primaryKey(),
   title: text('title').notNull(),
   status: text('status').notNull(),
-  projectId: integer('project_id')
+  projectId: integer('project_id').notNull()
 })
 
 export const todosRelations = relations(todos, ({ one }) => ({
-  author: one(projects, {
+  project: one(projects, {
     fields: [todos.projectId],
     references: [projects.id],
   }),

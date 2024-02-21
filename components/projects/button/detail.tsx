@@ -6,6 +6,7 @@ import { HiOutlineX } from "react-icons/hi"
 import SetToDoButton from "@/components/doing/button/setToDo"
 import SetToDoneButton from "@/components/doing/button/setToDone"
 import SetToDoingButton from "./setToDoing"
+import GetTodosProject from "@/app/projects/action/getTodosProject"
 
 export default function ProjectDetailButton({ project }: any) {
   const [modal, setModal] = useState(false)
@@ -20,7 +21,7 @@ export default function ProjectDetailButton({ project }: any) {
     } else {
       setLoading(true)
       try {
-        const data: any = await GetTodos(project.id)
+        const data: any = await GetTodosProject(project.id)
         setTodos(data)
         setLoading(false)
       } catch (err) { console.log(err) }

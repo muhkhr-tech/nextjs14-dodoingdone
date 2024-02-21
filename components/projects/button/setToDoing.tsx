@@ -1,6 +1,6 @@
 'use client'
 
-import GetTodos from "@/app/projects/action/getTodos"
+import GetTodosProject from "@/app/projects/action/getTodosProject"
 import SetToDoing from "@/app/projects/action/setToDoing"
 import { useState } from "react"
 
@@ -11,7 +11,7 @@ export default function SetToDoingButton({ todoId, status, projectId, onStateCha
     setLoading(true)
     try {
       await SetToDoing(todoId, projectId)
-      const updatedTodos = await GetTodos(projectId)
+      const updatedTodos = await GetTodosProject(projectId)
       onStateChange(updatedTodos)
     } catch (err) { console.log(err) }
     finally {
@@ -25,7 +25,7 @@ export default function SetToDoingButton({ todoId, status, projectId, onStateCha
         onClick={handleClick}
         disabled={isLoading || status==='doing'}
         className="btn btn-xs disabled:bg-warning disabled:text-white">
-        {isLoading ? <span className="loading"></span> : 'Doing'}
+        {isLoading ? <span className="loading loading-xs"></span> : 'Doing'}
       </button>
     </>
   )

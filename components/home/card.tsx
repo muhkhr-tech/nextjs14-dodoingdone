@@ -1,9 +1,8 @@
 'use client'
 
-import GetProjects from "@/app/projects/action/getProjects"
-import Link from "next/link"
 import { useEffect, useState } from "react"
 import LoadingSkeleton from "./loadingSekeleton"
+import GetTodos from "@/app/projects/action/getTodos"
 
 export default function Card({ status }: any) {
   const [data, setData] = useState([])
@@ -13,7 +12,7 @@ export default function Card({ status }: any) {
     const fetchData = async () => {
       setLoading(true)
       try {
-        const respData: any = await GetProjects(status, 3)
+        const respData: any = await GetTodos(status, 3, true)
         setData(respData)
       } catch (err) { console.log(err) }
       finally {
@@ -30,11 +29,18 @@ export default function Card({ status }: any) {
       <hr className="mb-2" />
       {isLoading ? <LoadingSkeleton />
         : <div>
-          <div className="mb-3">{data.map((item: any, index) => (
-            <div key={index}>{item.title}</div>
-          ))}
-          </div>
-          <Link href={`/projects?status=${status}`} className="text-primary">See all</Link>
+          {data.length === 0 ? <p className="text-sm text-slate-600">No todos found.</p>
+            : <div className="mb-3">{data.map((item: any, index) => (
+              <div key={index}>
+                <div>{item.title}</div>
+                <div className="text-xs">
+                  Project : <span className="text-slate-600">{item.project.title}</span>
+                </div>
+              </div>
+            ))}
+            </div>
+          }
+          {/* <Link href={`/projects?status=${status}`} className="text-primary">See all</Link> */}
         </div>}
     </div>
   )

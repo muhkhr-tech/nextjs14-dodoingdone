@@ -56,7 +56,7 @@ export default function AddTodosProjectButton(projectId: any) {
     <div>
 
       <button className="btn btn-xs sm:btn-sm font-thin text-white btn-primary" onClick={handleChange}>
-        Add
+        Add Todos
       </button>
 
       <input

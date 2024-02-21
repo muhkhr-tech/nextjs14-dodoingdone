@@ -11,20 +11,20 @@ export default function MenuNavbarBottom() {
       },
       {
         name: 'DO',
-        path: '/projects?status=do',
+        path: '/?status=do',
         status: 'do',
         icon: <HiOutlineClipboardDocument size={23}/>
       
       },
       {
         name: 'DOING',
-        path: '/projects?status=doing',
+        path: '/?status=doing',
         status: 'doing',
         icon: <HiOutlineClipboardDocumentList size={23}/>
       },
       {
         name: 'DONE',
-        path: '/projects?status=done',
+        path: '/?status=done',
         status: 'done',
         icon: <HiOutlineClipboardDocumentCheck size={23} />
       },

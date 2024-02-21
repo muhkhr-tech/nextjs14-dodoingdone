@@ -1,0 +1,1 @@
+ALTER TABLE "todos" ALTER COLUMN "project_id" SET NOT NULL;

@@ -1,6 +1,5 @@
 import AddTodosProjectButton from "./button/addTodos";
 import ProjectDetailButton from "./button/detail";
-import SetStatusButton from "./button/setStatus";
 
 export default function Card({ data }: any) {
   const getCompletion = (todo: number, doing: number, done: number) => {
@@ -24,8 +23,7 @@ export default function Card({ data }: any) {
       {data.map((item: any, index: any) => (
         <div key={index} className="relative border p-4 rounded-md shadow-md">
           <div className="flex justify-between">
-            <h4 className="text-md font-bold sm:font-normal sm:text-lg"><span className={`${item.status == 'do' && 'text-purple-700'} ${item.status == 'doing' && 'text-yellow-500'} ${item.status == 'done' && 'text-green-700'} uppercase text-xs sm:text-sm`}>[{item.status}]</span> {item.title}</h4>
-            <SetStatusButton projectId={item.id} status={item.status} />
+            <h4 className="text-md font-bold sm:font-normal sm:text-lg">{item.title}</h4>
           </div>
           <div className="mb-2 flex gap-1 text-xs">
             <p className="mb-2 text-xs text-slate-700">{getDaysLeft(item.createdAt, item.dueDate)} days left</p> |

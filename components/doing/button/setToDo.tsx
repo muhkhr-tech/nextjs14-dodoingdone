@@ -1,9 +1,8 @@
 'use client'
 
 import SetToDo from "@/app/projects/action/setToDo"
-import GetTodos from "@/app/projects/action/getTodos"
 import { useState } from "react"
-import Image from "next/image"
+import GetTodosProject from "@/app/projects/action/getTodosProject"
 
 export default function SetToDoButton({ todoId, status, projectId, onStateChange }: any) {
   const [isLoading, setLoading] = useState(false)
@@ -12,7 +11,7 @@ export default function SetToDoButton({ todoId, status, projectId, onStateChange
     setLoading(true)
     try {
       await SetToDo(todoId, projectId)
-      const updatedTodos = await GetTodos(projectId)
+      const updatedTodos = await GetTodosProject(projectId)
       onStateChange(updatedTodos)
     } catch (err) { console.log(err) }
     finally {
@@ -26,7 +25,7 @@ export default function SetToDoButton({ todoId, status, projectId, onStateChange
         onClick={handleClick}
         disabled={isLoading || status==="do"}
         className={`btn btn-xs disabled:bg-purple-700 disabled:text-white`}>
-        {isLoading ? <Image src={'/spinner.gif'} className="bg-none" width={25} height={25} alt="spinner"/> : 'Do'}
+        {isLoading ? <span className="loading loading-xs"></span> : 'Do'}
       </button>
     </>
   )
