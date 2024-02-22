@@ -9,23 +9,23 @@ export const authOptions: AuthOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
-  callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-      return true
-    },
-    async redirect({ url, baseUrl }) {
-      console.log('redirect')
-      return baseUrl
-    },
-    async session({ session, user, token }) {
-      console.log('session')
-      return session
-    },
-    async jwt({ token, user, account, profile, isNewUser }) {
-      console.log('jwt')
-      return token
-    }
-  }
+  // callbacks: {
+  //   async signIn({ user, account, profile, email, credentials }) {
+  //     return true
+  //   },
+  //   async redirect({ url, baseUrl }) {
+  //     console.log('redirect')
+  //     return baseUrl
+  //   },
+  //   async session({ session, user, token }) {
+  //     console.log('session')
+  //     return session
+  //   },
+  //   async jwt({ token, user, account, profile, isNewUser }) {
+  //     console.log('jwt')
+  //     return token
+  //   }
+  // }
 }
 
 export default authOptions;
