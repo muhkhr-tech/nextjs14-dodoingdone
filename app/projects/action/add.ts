@@ -7,6 +7,7 @@ export default async function AddProject(inputData: any) {
   await db.insert(projects).values({
     'title': inputData.title,
     'description': inputData.description,
-    'dueDate': inputData.dueDate
+    'dueDate': inputData.dueDate,
+    'userId': 1
   })
 }
