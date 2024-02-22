@@ -15,7 +15,6 @@ export default function NavbarTopSection() {
         <li key={index} className={`${pathname===item.path && 'self-center font-extrabold text-warning'} self-center p-2`}>
           <Link href={item.path} className="flex flex-col items-center w-full"><span>{item.icon}</span> <span className="text-xs">{item.name}</span></Link></li>
       ))}
-      <li className="flex items-center"><AuthButton /></li>
     </ul>
   )
 }

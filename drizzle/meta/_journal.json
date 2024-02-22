@@ -64,6 +64,13 @@
       "when": 1708530610766,
       "tag": "0008_legal_kid_colt",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1708572605713,
+      "tag": "0009_lyrical_grim_reaper",
+      "breakpoints": true
     }
   ]
 }

@@ -5,6 +5,7 @@ export default function Home() {
 
   return (
     <div className="mt-40 sm:mt-10">
+      <div className="mb-2"><AuthButton /></div>
       <h1 className="text-center text-2xl mb-1">
         <span className="text-purple-700">Do</span>
         <span className="text-yellow-500">Doing</span>

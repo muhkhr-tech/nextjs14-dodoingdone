@@ -1,8 +1,5 @@
-import { db } from "@/db";
-import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { AuthOptions } from "next-auth";
-import EmailProvider from "next-auth/providers/email";
-import GoogleProvider from "next-auth/providers/google";
+import GoogleProvider from "next-auth/providers/google";;
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -10,20 +7,25 @@ export const authOptions: AuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID ?? "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
     }),
-    // EmailProvider({
-    //   server: {
-    //     host: process.env.EMAIL_SERVER_HOST,
-    //     port: process.env.EMAIL_SERVER_PORT,
-    //     auth: {
-    //       user: process.env.EMAIL_SERVER_USER,
-    //       pass: process.env.EMAIL_SERVER_PASSWORD
-    //     }
-    //   },
-    //   from: process.env.EMAIL_FROM
-    // }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
-  // adapter: DrizzleAdapter(db)
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      return true
+    },
+    async redirect({ url, baseUrl }) {
+      console.log('redirect')
+      return baseUrl
+    },
+    async session({ session, user, token }) {
+      console.log('session')
+      return session
+    },
+    async jwt({ token, user, account, profile, isNewUser }) {
+      console.log('jwt')
+      return token
+    }
+  }
 }
 
 export default authOptions;
