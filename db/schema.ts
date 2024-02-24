@@ -9,9 +9,8 @@ import {
   timestamp,
   varchar,
 } from 'drizzle-orm/pg-core';
-import { AdapterAccount } from 'next-auth/adapters';
 
-export const users = pgTable("user", {
+export const users = pgTable("ddd_user", {
   id: text("id").notNull().primaryKey(),
   name: text("name"),
   email: text("email").notNull(),
@@ -23,7 +22,7 @@ export const usersRelations = relations(users, ({ many }) => ({
   projects: many(projects),
 }));
 
-export const projects = pgTable('projects', {
+export const projects = pgTable('ddd_projects', {
   id: serial('id').primaryKey(),
   title: varchar('title').notNull().unique(),
   description: text('description'),
@@ -39,7 +38,7 @@ export const projectsRelations = relations(projects, ({ many }) => ({
   todos: many(todos),
 }));
 
-export const todos = pgTable('todos', {
+export const todos = pgTable('ddd_todos', {
   id: serial('id').primaryKey(),
   title: text('title').notNull(),
   status: text('status').notNull(),
