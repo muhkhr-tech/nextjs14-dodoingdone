@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MenuNavbarTop from "../lib/navigation/menuNavbarTop";
-import AuthButton from "./auth/button/authButton";
 
 export default function NavbarTopSection() {
   const menu = MenuNavbarTop()

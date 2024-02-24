@@ -5,7 +5,6 @@ import Image from "next/image";
 
 export default function AuthButton() {
   const { data: session } = useSession();
-  console.log(session, '-------------')
   return (
     <>
       <div className="flex justify-center">
