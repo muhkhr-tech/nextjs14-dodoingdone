@@ -22,7 +22,7 @@ export default function Home() {
       <Card status={'done'} />
     </div>
 
-    <div className="sm:hidden grid grid-cols-1 gap-4 px-5 justify-center mt-5">
+    <div className="sm:hidden grid grid-cols-1 gap-4 px-5 justify-center mt-5 mb-20">
       <Card status={'do'} />
       <Card status={'doing'} />
       <Card status={'done'} />
