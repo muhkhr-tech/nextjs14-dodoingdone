@@ -4,7 +4,7 @@ import Card from "@/components/home/card";
 export default function Home() {
 
   return (
-    <div className="mt-40 sm:mt-10">
+    <div className="mt-10">
       <div className="mb-2"><AuthButton /></div>
       <h1 className="text-center text-2xl mb-1">
         <span className="text-purple-700">Do</span>
@@ -22,7 +22,7 @@ export default function Home() {
       <Card status={'done'} />
     </div>
 
-    <div className="sm:hidden grid grid-cols-3 gap-4 justify-center mt-20">
+    <div className="sm:hidden grid grid-cols-1 gap-4 px-5 justify-center mt-5">
       <Card status={'do'} />
       <Card status={'doing'} />
       <Card status={'done'} />

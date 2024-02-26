@@ -10,29 +10,35 @@ export default function MenuNavbarBottom() {
       
       },
       {
-        name: 'DO',
-        path: '/?status=do',
-        status: 'do',
+        name: 'PROJECTS',
+        path: '/projects',
         icon: <HiOutlineClipboardDocument size={23}/>
       
       },
-      {
-        name: 'DOING',
-        path: '/?status=doing',
-        status: 'doing',
-        icon: <HiOutlineClipboardDocumentList size={23}/>
-      },
-      {
-        name: 'DONE',
-        path: '/?status=done',
-        status: 'done',
-        icon: <HiOutlineClipboardDocumentCheck size={23} />
-      },
-      {
-        name: 'HISTORY',
-        path: '/history',
-        icon: <HiOutlineDocumentText size={23}/>
+      // {
+      //   name: 'DO',
+      //   path: '/?status=do',
+      //   status: 'do',
+      //   icon: <HiOutlineClipboardDocument size={23}/>
+      
+      // },
+      // {
+      //   name: 'DOING',
+      //   path: '/?status=doing',
+      //   status: 'doing',
+      //   icon: <HiOutlineClipboardDocumentList size={23}/>
+      // },
+      // {
+      //   name: 'DONE',
+      //   path: '/?status=done',
+      //   status: 'done',
+      //   icon: <HiOutlineClipboardDocumentCheck size={23} />
+      // },
+      // {
+      //   name: 'HISTORY',
+      //   path: '/history',
+      //   icon: <HiOutlineDocumentText size={23}/>
   
-      }
+      // }
     ]
   }
